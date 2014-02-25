@@ -4,9 +4,6 @@ Hazelnut.js
 @license hazelnut 0.0.1 Copyright (c) 2014, Sven Winkler.
 Available via the MIT or new BSD license.
 
-jslint sloppy: true
-global setTimeout: false
-
 Take global object to attach our handlers to.
 
     ((global) ->
