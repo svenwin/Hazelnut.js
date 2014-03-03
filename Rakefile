@@ -11,9 +11,11 @@ task :test do
   end
 end
 
-task :test_preview do
-  compile_test do |filename|
-    `open #{filename}`
+namespace :test do
+  task :preview do
+    compile_test do |filename|
+      `open #{filename}`
+    end
   end
 end
 

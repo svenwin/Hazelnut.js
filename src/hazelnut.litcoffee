@@ -4,6 +4,11 @@ Hazelnut.js
 @license hazelnut 0.0.1 Copyright (c) 2014, Sven Winkler.
 Available via the MIT or new BSD license.
 
+Hazelnut.js is a minimal loader for modules defined with AMD. It does not
+provide code loading, concatenation or plugin loading. This behaviour is
+desired in environments where you can rely on rock-solid solutions like the
+Rails asset pipeline.
+
 Take global object to attach our handlers to.
 
     ((global) ->
