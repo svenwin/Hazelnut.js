@@ -3,6 +3,7 @@ describe "define", ->
     expect(define).to.be.a "function"
 
   describe "basic definition of methods", ->
+
     beforeEach ->
       hazelnut_reset()
       define "a", -> 5
@@ -32,3 +33,10 @@ describe "define", ->
 
       expect(require("function")).to.be.a "function"
       expect(require("function").call this, 5, 6).to.equal 11
+      expect(require("function").call this, 5, 7).to.equal 12
+
+    it "ensures the define order is irrelevant", ->
+      define "B", ["A"], (A)-> class B extends A
+      define "A", -> class A
+
+      expect(require("B")).to.be.a "function"
